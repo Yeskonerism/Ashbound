@@ -1,0 +1,1 @@
+global.camera = camera_controller(global.PlayerManager.Get(), true, 0);

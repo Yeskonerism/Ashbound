@@ -1,0 +1,1 @@
+global.camera.update(false, false);
