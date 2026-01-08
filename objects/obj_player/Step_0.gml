@@ -1,4 +1,4 @@
-#region Player Movement
+#region Input
 
 // player keys
 var key_left = keyboard_check(ord("A")); 
@@ -6,36 +6,56 @@ var key_right = keyboard_check(ord("D"));
 var key_up = keyboard_check(ord("W")); 
 var key_down = keyboard_check(ord("S"));
 
+#endregion
+
+#region Player Movement
+
+var input_x = key_right - key_left;
+var input_y = key_down - key_up
+
+// Check if player is moving or not
+is_moving = (input_x != 0 || input_y != 0);
+
 // movement calculation
 if(can_move) {
-	target_hsp = move_spd * (key_right - key_left);
-	target_vsp = move_spd * (key_down - key_up);
+	input_dir = Vector2(input_x, input_y);
 
+	if(is_moving) {
+		input_dir.Normalise();
+		input_dir.Scale(move_spd);
+	}
+	
+	hsp = lerp(hsp, input_dir.X, accel);
+	vsp = lerp(vsp, input_dir.Y, accel);
+	
 	// horizontal collision
-	if(!place_free(x + hsp, y)) {
+	if(!place_free(Position.X + Velocity.X, vsp)) {
 		hsp = 0;
 	}
 
-	hsp = lerp(hsp, target_hsp, accel);
-	x += hsp;
-
 	// vertical collision
-	if(!place_free(x, y + vsp)) {
+	if(!place_free(Position.X, Position.Y + hsp)) {
 		vsp = 0;
 	}
-
-	vsp = lerp(vsp, target_vsp, accel);
-	y += vsp;
+	
+	Velocity.X = hsp;
+	Velocity.Y = vsp
 }
 
-if(target_hsp == 0 && target_vsp == 0) accel = target_accel*2;
+Position.Add(Velocity);
+
+if(!is_moving) accel = target_accel*2;
 else accel = target_accel;
+
+// SET POSITION BASED ON POSITION VECTOR
+x = Position.X;
+y = Position.Y;
 
 #endregion
 
 #region Animation
 
-x_scale = (flipped) ? -1 : 1;
-flipped = mouse_x < x;
+flipped = mouse_x < Position.X;
+scale.X = (flipped) ? -1 : 1;
 
 #endregion

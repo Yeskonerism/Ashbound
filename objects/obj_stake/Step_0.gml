@@ -11,12 +11,14 @@ if(distance_to_object(obj_player) < 32) {
 		state_node.Exhaust();
 		
 		// PLAYER MANAGER TESTING
-		global.PlayerManager.Exec(function(p) {
-			p.x = 20;
-			p.y = 20;
-		});
+		//global.PlayerManager.Exec(function(p) {
+		//	p.Position.X = 20;
+		//	p.Position.Y = 20;
+		//});
 		
 		global.WorldFlags.Set("stake.01.lit", false);
+		
+		global.camera.screenshake(5)
 	}	
 }
 

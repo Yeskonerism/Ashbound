@@ -1,7 +1,13 @@
 //
 // Movement
 //
+Position = Vector2(x, y);
+Velocity = Vector2(0, 0);
+
+input_dir = 0;
+
 can_move = true;
+is_moving = false;
 
 hsp = 0;
 vsp = 0;
@@ -19,8 +25,7 @@ target_accel = accel;
 //
 flipped = false;
 
-x_scale = 1;
-y_scale = 1;
+scale = Vector2(1,1);
 
 rotation = 0;
 
