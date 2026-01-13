@@ -42,6 +42,7 @@
   "name":"Ashbound",
   "resources":[
     {"id":{"name":"obj_ash_particle","path":"objects/obj_ash_particle/obj_ash_particle.yy",},},
+    {"id":{"name":"obj_bricks","path":"objects/obj_bricks/obj_bricks.yy",},},
     {"id":{"name":"obj_camera","path":"objects/obj_camera/obj_camera.yy",},},
     {"id":{"name":"obj_game","path":"objects/obj_game/obj_game.yy",},},
     {"id":{"name":"obj_grass_generator","path":"objects/obj_grass_generator/obj_grass_generator.yy",},},
@@ -80,8 +81,8 @@
   "resourceType":"GMProject",
   "resourceVersion":"2.0",
   "RoomOrderNodes":[
-    {"roomId":{"name":"rm_game","path":"rooms/rm_game/rm_game.yy",},},
     {"roomId":{"name":"rm_intro","path":"rooms/rm_intro/rm_intro.yy",},},
+    {"roomId":{"name":"rm_game","path":"rooms/rm_game/rm_game.yy",},},
   ],
   "templateType":"game",
   "TextureGroups":[

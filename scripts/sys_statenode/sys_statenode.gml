@@ -12,8 +12,10 @@ function sys_statenode(_id, _state, _global_activation){
 		EventBus: _global_activation ? global.EventBus : sys_eventbus(),
 		
 		SetState: function(new_state) {
-			self.state = new_state;
-			EventBus.Emit("on_state_changed", { node_id: self.node_id, state: self.state });
+			if(self.Query() != new_state) {
+				self.state = new_state;
+				EventBus.Emit("on_state_changed", { node_id: self.node_id, state: self.state });
+			}
 		},
 		
 		Activate: function() {

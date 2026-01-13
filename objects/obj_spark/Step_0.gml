@@ -8,7 +8,7 @@ var key_down = keyboard_check(ord("S"));
 
 // movement calculation
 if(can_move) {
-	target_hsp = move_spd * (key_right - key_left) + 0.8;
+	target_hsp = move_spd * (key_right - key_left) + player_affected_wind_speed;
 	target_vsp = move_spd * (key_down - key_up);
 
 	// horizontal collision

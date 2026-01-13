@@ -1,15 +1,11 @@
 {
   "$GMObject":"",
-  "%Name":"obj_grass",
+  "%Name":"obj_bricks",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"v1","%Name":"","eventNum":0,"eventType":4,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":{"name":"obj_bricks","path":"objects/obj_bricks/obj_bricks.yy",},"eventNum":0,"eventType":4,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_grass",
+  "name":"obj_bricks",
   "overriddenProperties":[],
   "parent":{
     "name":"Environment",
@@ -34,8 +30,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_grass",
-    "path":"sprites/spr_grass/spr_grass.yy",
+    "name":"spr_bricks",
+    "path":"sprites/spr_bricks/spr_bricks.yy",
   },
   "spriteMaskId":null,
   "visible":true,
